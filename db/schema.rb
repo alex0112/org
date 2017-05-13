@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512052544) do
+ActiveRecord::Schema.define(version: 20170513042952) do
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -20,9 +20,8 @@ ActiveRecord::Schema.define(version: 20170512052544) do
   end
 
   create_table "tickets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "number"
     t.string "descr"
-    t.string "type"
+    t.string "kind"
     t.string "status"
     t.bigint "project_id"
     t.datetime "created_at", null: false
