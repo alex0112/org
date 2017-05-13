@@ -33,7 +33,12 @@
 
   <div class="field">
     <%= form.label :project_id %>
-    <%= form.text_field :project_id, id: :ticket_project_id %>
+    <%= form.select(:project_id) do %>
+    <% Project.all.each do |project| -%>
+    <%= content_tag(:option, project.name, value: project.id) %>
+    <% end %>
+    <% end %>
+  
   </div>
 
   <div class="actions">
